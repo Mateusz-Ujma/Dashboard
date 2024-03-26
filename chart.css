@@ -1,0 +1,98 @@
+.charts {
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 150px;
+}
+
+.not-visible {
+  height: 0;
+  overflow-x: hidden;
+}
+
+#volume {
+  margin: 10px;
+  font-size: 2em;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  max-width: 190px;
+  color: white;
+  text-align: center;
+}
+#l-volume {
+  font-size: 2rem;
+}
+#left-to-sort {
+  margin: 10px;
+  font-size: 2em;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  max-width: 190px;
+  color: white;
+  text-align: center;
+}
+#l-left {
+  font-size: 2rem;
+}
+
+.bar-chart {
+  height: 70vh;
+}
+.volume-and-left {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.on30 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-top: 20px;
+  text-align: center;
+}
+#chart-clock {
+  width: 100%;
+  height: 100px;
+  font-size: 4.5rem;
+  color: white;
+  text-align: right;
+}
+#l-on30 {
+  width: 100%;
+  font-size: 2rem;
+}
+
+#on-30min {
+  margin: 10px;
+  font-size: 2em;
+  background-color: rgb(224, 224, 224);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  max-width: 190px;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#hour {
+  font-size: 1.4em;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  max-width: 190px;
+  color: white;
+}
