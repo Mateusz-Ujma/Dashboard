@@ -1,13 +1,41 @@
 import { volume, leftToSort } from './loadData.js';
-import { sort30minArr } from './localSave.js';
+import {
+  idEight,
+  idEleven,
+  idFive,
+  idFour,
+  idNine,
+  idOne,
+  idSeven,
+  idSix,
+  idTen,
+  idThree,
+  idTwelve,
+  idTwo,
+  idZero,
+  sort30minArr,
+} from './localSave.js';
 const ctx = document.getElementById('circle-chart');
 const bar = document.getElementById('bar-chart');
 
 let sumLeft = Math.abs(leftToSort.value - volume.value);
 let sumVol = Math.abs(sumLeft - volume.value);
 let value = [sumLeft, sumVol];
-let on30minSort = sort30minArr;
-
+let on30minSort = [
+  idZero,
+  idOne,
+  idTwo,
+  idThree,
+  idFour,
+  idFive,
+  idSix,
+  idSeven,
+  idEight,
+  idNine,
+  idTen,
+  idEleven,
+  idTwelve,
+];
 export const circle = new Chart(ctx, {
   type: 'pie',
   data: {

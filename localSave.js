@@ -10,11 +10,65 @@ const leftToSortInp = document.querySelector('#left-to-sort');
 const chart = document.querySelector('.charts');
 const barCharts = document.querySelector('.bar-charts');
 
+export let idZero = localStorage.hasOwnProperty('30min0')
+  ? localStorage.getItem('30min0')
+  : 0;
+export let idOne = localStorage.hasOwnProperty('30min1')
+  ? localStorage.getItem('30min1')
+  : 0;
+export let idTwo = localStorage.hasOwnProperty('30min2')
+  ? localStorage.getItem('30min2')
+  : 0;
+export let idThree = localStorage.hasOwnProperty('30min3')
+  ? localStorage.getItem('30min3')
+  : 0;
+export let idFour = localStorage.hasOwnProperty('30min4')
+  ? localStorage.getItem('30min4')
+  : 0;
+export let idFive = localStorage.hasOwnProperty('30min5')
+  ? localStorage.getItem('30min5')
+  : 0;
+export let idSix = localStorage.hasOwnProperty('30min6')
+  ? localStorage.getItem('30min6')
+  : 0;
+export let idSeven = localStorage.hasOwnProperty('30min7')
+  ? localStorage.getItem('30min7')
+  : 0;
+export let idEight = localStorage.hasOwnProperty('30min8')
+  ? localStorage.getItem('30min8')
+  : 0;
+export let idNine = localStorage.hasOwnProperty('30min9')
+  ? localStorage.getItem('30min9')
+  : 0;
+export let idTen = localStorage.hasOwnProperty('30min10')
+  ? localStorage.getItem('30min10')
+  : 0;
+export let idEleven = localStorage.hasOwnProperty('30min11')
+  ? localStorage.getItem('30min11')
+  : 0;
+export let idTwelve = localStorage.hasOwnProperty('30min12')
+  ? localStorage.getItem('30min12')
+  : 0;
 export let activeView = 'home';
 export let volume = 0;
 export let leftToSort = 0;
 let sort30min = '0,0,0,0,0,0,0,0,0,0,0,0,0';
-export let sort30minArr = [];
+export let sort30minArr = [
+  idZero,
+  idOne,
+  idTwo,
+  idThree,
+  idFour,
+  idFive,
+  idSix,
+  idSeven,
+  idEight,
+  idNine,
+  idTen,
+  idEleven,
+  idTwelve,
+];
+
 export let sortStartValue = '';
 export let sortEndValue = '';
 export let lhValue = 0;
@@ -71,7 +125,8 @@ export const SaveSortStart = (value) => {
 
 export const Save30min = (value, id) => {
   sort30minArr[id] = value;
-  localStorage.set('30min', sort30minArr);
+  idZero = value;
+  localStorage.setItem('30min' + id, value);
 };
 export const SaveSortEnd = (value) => {
   sortEndValue = value;
@@ -87,13 +142,7 @@ export const SaveLastLH = (value) => {
 };
 
 const LoadData = () => {
-  // if (document.body.clientHeight < 1100) {
-  //   barCharts.innerHTML = '<canvas id="bar-chart" height="110"></canvas>'
-  // } else {
-  //   barCharts.innerHTML = '<canvas id="bar-chart" height="150"></canvas>'
-  // }
-
-  sort30minArr = localStorage.hasOwnProperty('30min')
+  localStorage.hasOwnProperty('30min')
     ? localStorage.get('30min')
     : localStorage.set('30min', '0');
   sortStartValue = localStorage.hasOwnProperty('sortStart')
