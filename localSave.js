@@ -91,16 +91,32 @@ const LoadData = () => {
   // } else {
   //   barCharts.innerHTML = '<canvas id="bar-chart" height="150"></canvas>'
   // }
-  console.log(document.body.clientHeight)
 
-  sort30minArr = localStorage.get('30min')
-  sortStartValue = localStorage.getItem('sortStart')
-  volume = localStorage.getItem('volume')
-  leftToSort = localStorage.getItem('leftToSort')
-  activeView = localStorage.getItem('activeView')
-  sortEndValue = localStorage.getItem('sortEnd')
-  lhValue = localStorage.getItem('LH')
+  sort30minArr = localStorage.hasOwnProperty('30min')
+    ? localStorage.get('30min')
+    : localStorage.set('30min', '0')
+  sortStartValue = localStorage.hasOwnProperty('sortStart')
+    ? localStorage.getItem('sortStart')
+    : localStorage.setItem('sortStart', '00:00')
+  volume = localStorage.hasOwnProperty('volume')
+    ? localStorage.getItem('volume')
+    : localStorage.setItem('volume', '0')
+  leftToSort = localStorage.hasOwnProperty('leftToSort')
+    ? localStorage.getItem('leftToSort')
+    : localStorage.setItem('leftToSort', '0')
+  activeView = localStorage.hasOwnProperty('activeView')
+    ? localStorage.getItem('activeView')
+    : localStorage.setItem('activeView', 'home')
+  sortEndValue = localStorage.hasOwnProperty('sortEnd')
+    ? localStorage.getItem('sortEnd')
+    : localStorage.setItem('sortEnd', '00:00')
+  lhValue = localStorage.hasOwnProperty('LH')
+    ? localStorage.getItem('LH')
+    : localStorage.setItem('LH', '0')
   lastLHValue = localStorage.getItem('lastLH')
+  localStorage.hasOwnProperty('lastLH')
+    ? localStorage.getItem('lastLH')
+    : localStorage.setItem('lastLH', '00:00')
 
   volumeInp.value = volume
   leftToSortInp.value = leftToSort
