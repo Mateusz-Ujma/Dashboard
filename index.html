@@ -20,16 +20,29 @@
     <script defer type="module" src="switchView.js"></script>
   </head>
   <body>
+    <dialog id="favDialog">
+      <form>
+        <p>
+          <label> Czy chcesz zresetować dane? </label>
+        </p>
+        <div>
+          <button value="cancel" formmethod="dialog">NIE</button>
+          <button id="confirmBtn" value="default">TAK</button>
+        </div>
+      </form>
+    </dialog>
     <nav>
       <ul>
-        <button id="home" class="active">Home</button>
-        <button id="charts">Charts</button>
+        <button id="reset">Reset</button>
+        <button id="home" class="active">Główna</button>
+        <button id="couriers">Kurierzy</button>
+        <button id="charts">Wykresy</button>
         <button id="start-stop">
           <img src="video.png" alt="" width="30" id="img" />
         </button>
       </ul>
     </nav>
-
+    <!-- Main -->
     <div class="main">
       <div class="sort-start">
         <input type="time" name="sort-start" id="sort-start" />
@@ -48,9 +61,40 @@
         <h3>Przewidywany czas ostatniego frachtu</h3>
       </div>
       <div class="date-time">
-        <span id="date"></span><span class="clock"></span>
+        <span class="date"></span><span class="clock"></span>
       </div>
     </div>
+    <!-- Kurierzy -->
+    <div class="couriers">
+      <div class="apmPercentage">
+        <div class="apmPercentageCont">
+          <input type="number" name="apmP" id="apmP" /><span id="percent"
+            >%</span
+          >
+        </div>
+        <h3>Skuteczność APM</h3>
+      </div>
+      <div class="d2dPerentage">
+        <div class="d2dPerentageCont">
+          <input type="number" name="d2dP" id="d2dP" /><span id="percent"
+            >%</span
+          >
+        </div>
+        <h3>Skuteczność D2D</h3>
+      </div>
+      <div class="apmValue">
+        <input type="number" name="apmV" id="apmV" />
+        <h3>Skuteczność APM</h3>
+      </div>
+      <div class="d2dValue">
+        <input type="number" name="d2dV" id="d2dV" />
+        <h3>Skuteczność D2D</h3>
+      </div>
+      <div class="date-time">
+        <span class="date"></span><span class="clock"></span>
+      </div>
+    </div>
+    <!-- Wykresy -->
     <div class="charts">
       <div class="circle" style="width: 400px">
         <canvas id="circle-chart"></canvas>
@@ -67,22 +111,8 @@
         <div class="on30">
           <label for="on-30min" id="l-on30">Wydajność na 30 minut</label>
           <input type="number" name="on-30min" id="on-30min" />
-          <select name="hour" id="hour">
-            <option value="99">Wybierz</option>
-            <option value="0">2:30</option>
-            <option value="1">3:00</option>
-            <option value="2">3:30</option>
-            <option value="3">4:00</option>
-            <option value="4">4:30</option>
-            <option value="5">5:00</option>
-            <option value="6">5:30</option>
-            <option value="7">6:00</option>
-            <option value="8">6:30</option>
-            <option value="9">7:00</option>
-            <option value="10">7:30</option>
-            <option value="11">8:00</option>
-            <option value="12">8:30</option>
-          </select>
+          <input type="time" name="hour" id="hour" required />
+          <button id="save30min-btn">Zapisz</button>
           <span id="chart-clock" class="clock"></span>
         </div>
       </div>

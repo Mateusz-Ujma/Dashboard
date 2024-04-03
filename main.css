@@ -34,13 +34,18 @@ ul {
   background-color: rgb(233, 229, 0);
   color: black;
 }
-#home {
+#home,
+#couriers,
+#reset {
   width: 150px;
   text-align: center;
   border-radius: 7px;
   font-weight: 900;
   border: none;
   font-size: 1.5rem;
+}
+#reset {
+  color: red;
 }
 #charts {
   width: 150px;
@@ -53,9 +58,9 @@ ul {
 nav {
   min-height: 30px;
 }
-.main {
+.main,
+.couriers {
   position: absolute;
-
   width: 100%;
   background-color: rgb(30, 30, 30);
   display: flex;
@@ -66,7 +71,8 @@ nav {
   align-items: center;
 }
 
-.main > * {
+.main > *,
+.couriers > * {
   text-align: center;
   margin: 10px 0 10px 0;
   width: 46%;
@@ -81,6 +87,10 @@ nav {
   padding: 5px;
 }
 
+.apmPercentage {
+  display: flex;
+  flex-direction: column;
+}
 .date-time {
   width: 98%;
   display: flex;
@@ -105,8 +115,40 @@ input[type='time']::-webkit-calendar-picker-indicator {
   top: 0;
   left: 0;
 }
-.sort-start > h3 {
+.sort-start > h3,
+.apmPercentage > h3,
+.d2dPerentage > h3,
+.apmValue > h3,
+.d2dValue > h3 {
   font-size: 2em;
+}
+
+#percent {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+.apmPercentageCont > input,
+.d2dPerentageCont > input {
+  font-size: 4em;
+  background-color: rgb(236, 236, 236);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  width: 30%;
+}
+.apmValue > input,
+.d2dValue > input {
+  font-size: 4em;
+  background-color: rgb(236, 236, 236);
+  border: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  width: 50%;
+}
+#percent {
+  font-size: 3em;
 }
 .sort-end > input {
   font-size: 5em;
@@ -146,4 +188,22 @@ input[type='time']::-webkit-calendar-picker-indicator {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 800;
   color: white;
+}
+
+#save30min-btn {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.3rem;
+  font-family: 'Noto Sans', sans-serif;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+}
+#hour {
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  font-family: 'Noto Sans', sans-serif;
 }

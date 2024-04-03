@@ -1,19 +1,31 @@
 import { volume, leftToSort } from './loadData.js';
 import {
   idEight,
+  idEightLabel,
   idEleven,
+  idElevenLabel,
   idFive,
+  idFiveLabel,
   idFour,
+  idFourLabel,
   idNine,
+  idNineLabel,
   idOne,
+  idOneLabel,
   idSeven,
+  idSevenLabel,
   idSix,
+  idSixLabel,
   idTen,
+  idTenLabel,
   idThree,
+  idThreeLabel,
   idTwelve,
+  idTwelveLabel,
   idTwo,
+  idTwoLabel,
   idZero,
-  sort30minArr,
+  idZeroLabel,
 } from './localSave.js';
 const ctx = document.getElementById('circle-chart');
 const bar = document.getElementById('bar-chart');
@@ -21,7 +33,7 @@ const bar = document.getElementById('bar-chart');
 let sumLeft = Math.abs(leftToSort.value - volume.value);
 let sumVol = Math.abs(sumLeft - volume.value);
 let value = [sumLeft, sumVol];
-let on30minSort = [
+export let on30minSort = [
   idZero,
   idOne,
   idTwo,
@@ -36,6 +48,22 @@ let on30minSort = [
   idEleven,
   idTwelve,
 ];
+let on30minSortLables = [
+  idZeroLabel,
+  idOneLabel,
+  idTwoLabel,
+  idThreeLabel,
+  idFourLabel,
+  idFiveLabel,
+  idSixLabel,
+  idSevenLabel,
+  idEightLabel,
+  idNineLabel,
+  idTenLabel,
+  idElevenLabel,
+  idTwelveLabel,
+];
+
 export const circle = new Chart(ctx, {
   type: 'pie',
   data: {
@@ -53,21 +81,7 @@ export const circle = new Chart(ctx, {
 new Chart(bar, {
   type: 'bar',
   data: {
-    labels: [
-      '2:30',
-      '3:00',
-      '3:30',
-      '4:00',
-      '4:30',
-      '5:00',
-      '5:30',
-      '6:00',
-      '6:30',
-      '7:00',
-      '7:30',
-      '8:00',
-      '8:30',
-    ],
+    labels: on30minSortLables,
     datasets: [
       {
         label: 'Wydajność na 30min',
